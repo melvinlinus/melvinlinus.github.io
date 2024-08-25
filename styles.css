@@ -29,6 +29,13 @@ h2 {
     margin-bottom: 20px;
     color: #E43D12;
 }
+/* p styles */
+p {
+    font-size: 1.25em;
+    flex: 1;
+    margin-right: 20px;
+    color: #E43D12; 
+}
 
 /* Text and image containr */
 .container {
