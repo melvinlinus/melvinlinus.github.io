@@ -1,0 +1,79 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EBE9E1; 
+    color: #2E3944; 
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    /*background-color: #124E66; */
+    color: #E43D12; 
+    font-size: 3.25em;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Main heading (h1) styles */
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Subheading (h2) styles */
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #E43D12;
+}
+
+/* Text and image containr */
+.container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    text-align: left; 
+}
+
+/* Text container styles */
+.text {
+    font-size: 1.25em;
+    flex: 1;
+    margin-right: 20px;
+    color: #E43D12; 
+}
+
+/* Image styles */
+.header-img {
+    width: 600px; /* Set image width to 600px */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* List and link styles */
+ul {
+    font-size: 1.25em;
+    list-style-type: none;
+    padding: 0;
+    color: #E43D12;
+}
+
+li {
+    margin: 40px 0;
+}
+
+a.button {
+    background-color: #EFB11D; 
+    color: #FFFFFF; 
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease; 
+}
+
+a.button:hover {
+    background-color: #D6536D; 
+}
