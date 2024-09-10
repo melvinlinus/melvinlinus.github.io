@@ -26,17 +26,22 @@
             padding: 20px;
             border: 0px solid;
         }
-        .input-box {
-            color: #E43D12;
+        .form-group {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
-        .input-box input {
-            color: #E43D12;
-            width: 50%;
-            padding: 8px;
-            
+        .form-group label {
+            flex: 1;
+            margin-right: 10px;
         }
-        .button {background-color: #E43D12;
+        .form-group input {
+            flex: 2;
+            color: #E43D12;
+            padding: 8px;
+        }
+        .button {
+            background-color: #E43D12;
             color: white;
             padding: 10px 20px;
             margin-right: 10px;
@@ -63,27 +68,25 @@
         <h1>Homework 2</h1>
     </header>
     <main class="content">
-      <p><a href="hw2.html">Back to Homework 2</a></p>
+        <p><a href="hw2.html">Back to Homework 2</a></p>
         <p><a href="hw1.html">Back to Main Page</a></p>
     </main>
     
     <main class="container">
-        
-        <div class="input-box">
+        <div class="form-group">
             <label for="num1">Enter first number:</label>
             <input type="text" id="num1">
         </div>
-        <div class="input-box">
+        <div class="form-group">
             <label for="num2">Enter second number:</label>
             <input type="text" id="num2">
         </div>
-        <div class="input-box">
+        <div class="form-group">
             <label for="num3">Enter third number:</label>
             <input type="text" id="num3">
         </div>
         <button class="button" onclick="processData()">Process</button>
         <button class="button" onclick="clearForm()">Clear</button>
-
     </main>
     
     <main class="container">
