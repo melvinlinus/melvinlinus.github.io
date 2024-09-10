@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework 2 - Form Processing and Calculations">
+    <title>CIS 114 - Homework 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .red-times-bold {
+            font-family: 'Times New Roman', serif;
+            color: red;
+            font-weight: bold;
+        }
+        .blue-arial {
+            font-family: Arial, sans-serif;
+            color: blue;
+        }
+        .green-impact-italic {
+            font-family: Impact, sans-serif;
+            color: green;
+            font-style: italic;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 0px solid;
+        }
+        .input-box {
+            color: #E43D12;
+            margin-bottom: 10px;
+        }
+        .input-box input {
+            color: #E43D12;
+            width: 50%;
+            padding: 8px;
+            
+        }
+        .button {background-color: #E43D12;
+            color: white;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .results {
+            color: #E43D12;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            min-height: 60px;
+        }
+        .error {
+            color: #E43D12;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Homework 2</h1>
+    </header>
+    <main class="content">
+      <p><a href="hw2.html">Back to Homework 2</a></p>
+        <p><a href="hw1.html">Back to Main Page</a></p>
+    </main>
+    
+    <main class="container">
+        
+        <div class="input-box">
+            <label for="num1">Enter first number:</label>
+            <input type="text" id="num1">
+        </div>
+        <div class="input-box">
+            <label for="num2">Enter second number:</label>
+            <input type="text" id="num2">
+        </div>
+        <div class="input-box">
+            <label for="num3">Enter third number:</label>
+            <input type="text" id="num3">
+        </div>
+        <button class="button" onclick="processData()">Process</button>
+        <button class="button" onclick="clearForm()">Clear</button>
+
+    </main>
+    
+    <main class="container">
+        <div class="results" id="results"></div>
+    </main>
+
+    <script>
+        function processData() {
+            // Retrieve values from input boxes
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+
+            const resultsDiv = document.getElementById('results');
+
+            // Check if all inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                resultsDiv.innerHTML = '<p class="error">Please enter valid numbers in all input fields.</p>';
+                return;
+            }
+
+            // Perform calculations
+            const sum = num1 + num2 + num3;
+            const average = sum / 3;
+            const product = num1 * num2 * num3;
+            const smallest = Math.min(num1, num2, num3);
+            const largest = Math.max(num1, num2, num3);
+
+            // Display results
+            resultsDiv.innerHTML = `
+                <p><strong>Results:</strong></p>
+                <p>Sum: ${sum}</p>
+                <p>Average: ${average.toFixed(2)}</p>
+                <p>Product: ${product}</p>
+                <p>Smallest: ${smallest}</p>
+                <p>Largest: ${largest}</p>
+            `;
+        }
+
+        function clearForm() {
+            // Clear input fields and results
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('num3').value = '';
+            document.getElementById('results').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
