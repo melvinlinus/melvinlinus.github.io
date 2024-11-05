@@ -1,17 +1,26 @@
-/* General body styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #EBE9E1; 
     color: #2E3944; 
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    line-height: 1.6;
 }
 
-/* Header styles */
+/* Header Styles */
 header {
-    /*background-color: #124E66; */
     color: #E43D12; 
-    font-size: 3.25em;
+    font-size: 2.5em;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -19,68 +28,163 @@ header {
 
 /* Main heading (h1) styles */
 h1 {
-    font-size: 3em;
+    font-size: 2.2em;
     margin: 0;
+    font-weight: 700;
 }
 
 /* Subheading (h2) styles */
 h2 {
-    font-size: 2.5em;
+    font-size: 1.8em;
     margin-bottom: 20px;
     color: #E43D12;
+    font-weight: 600;
 }
-/* p styles */
+
+/* Text (p) styles */
 p {
-    font-size: 1.25em;
-    flex: 1;
-    margin-right: 20px;
-    color: #E43D12; 
+    font-size: 1.1em;
+    color: #2E3944;
+    margin: 15px 0;
 }
 
-/* Text and image containr */
-.container {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    text-align: left; 
-}
-
-/* Text container styles */
-.text {
-    font-size: 1.25em;
-    flex: 1;
-    margin-right: 20px;
-    color: #E43D12; 
-}
-
-/* Image styles */
-.header-img {
-    width: 800px; /* Set image width to 600px */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* List and link styles */
-ul {
-    font-size: 1.25em;
-    list-style-type: none;
-    padding: 0;
-    color: #E43D12;
-}
-
-li {
-    margin: 40px 0;
-}
-
-a.button {
+/* Button Styles */
+a.button,
+button {
     background-color: #EFB11D; 
     color: #FFFFFF; 
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1em;
-    transition: background-color 0.3s ease; 
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0;
 }
 
-a.button:hover {
-    background-color: #D6536D; 
+a.button:hover,
+button:hover {
+    background-color: #D6536D;
+}
+
+/* Form and Input Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 1.1em;
+    color: #2E3944;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+select,
+textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #E43D12;
+    outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #E43D12;
+}
+
+/* Link Styles */
+a {
+    color: #E43D12;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* List Styles */
+ul {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 0;
+    color: #E43D12;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* Container for aligning elements */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+}
+
+.text {
+    font-size: 1.25em;
+    color: #E43D12; 
+    margin-right: 20px;
+}
+
+.header-img {
+    width: 800px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Output/Result Area */
+#output {
+    padding: 15px;
+    border: 1px solid #E43D12;
+    background-color: #FFF8E1;
+    color: #2E3944;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-img {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
 }
