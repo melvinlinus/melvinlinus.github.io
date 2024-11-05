@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3: State Information Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Part 3: State Information Lookup</h1>
+    </header>
+    <main class="content">
+        <a class="button" href="hw5.html">Back to Homework 5 Main Page</a>
+        
+        <form id="stateForm">
+            <label for="stateInput">Enter State Name or Abbreviation:</label>
+            <input type="text" id="stateInput">
+            <button type="button" onclick="getStateInfo()">Submit</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </form>
+
+        <div id="output"></div>
+
+        <script>
+            const states = {
+                'AL': { name: 'Alabama', capital: 'Montgomery', population: '4,903,185' },
+                'AK': { name: 'Alaska', capital: 'Juneau', population: '731,545' },
+                'AZ': { name: 'Arizona', capital: 'Phoenix', population: '7,278,717' },
+                'CA': { name: 'California', capital: 'Sacramento', population: '39,512,223' },
+                'CO': { name: 'Colorado', capital: 'Denver', population: '5,758,736' },
+                // Add more states here
+            };
+
+            function getStateInfo() {
+                const input = document.getElementById('stateInput').value.trim().toUpperCase();
+                const output = document.getElementById('output');
+                output.innerHTML = '';
+
+                if (!input || !(input in states) && !Object.values(states).some(s => s.name.toUpperCase() === input)) {
+                    output.textContent = 'Sorry, we do not have information about this state!';
+                    return;
+                }
+
+                const state = states[input] || Object.values(states).find(s => s.name.toUpperCase() === input);
+                output.innerHTML = `
+                    <p>State Abbr = ${input}</p>
+                    <p>State Name = ${state.name}</p>
+                    <p>Capital = ${state.capital}</p>
+                    <p>Population = ${state.population}</p>
+                `;
+            }
+
+            function clearForm() {
+                document.getElementById('stateForm').reset();
+                document.getElementById('output').innerHTML = '';
+            }
+        </script>
+    </main>
+</body>
+</html>
